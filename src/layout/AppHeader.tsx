@@ -87,14 +87,14 @@ const AppHeader: React.FC = () => {
               width={154}
               height={32}
               className="dark:hidden"
-              src="/images/logo/cmwi-logo.png"
+              src="/images/logo/logo-toho-real.png"
               alt="Logo"
             />
             <Image
               width={154}
               height={32}
               className="hidden dark:block"
-              src="/images/logo/cmwi-logo.png"
+              src="/images/logo/logo-toho-real.png"
               alt="Logo"
             />
           </Link>

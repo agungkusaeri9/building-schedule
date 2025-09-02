@@ -15,7 +15,7 @@ function OperatorListContent() {
         const confirmed = await confirmDelete();
         if (confirmed) {
             // remove(id);
-            toast.success("Machine deleted successfully.");
+            toast.success("Product deleted successfully.");
         }
     };
 
@@ -55,7 +55,7 @@ function OperatorListContent() {
             cell: (item: any) => (
                 <div className="flex items-center gap-2">
                     <ButtonLink
-                        href={`/shift/${item.id}/edit`}
+                        href={`/products/${item.id}/edit`}
                         variant='info'
                         size='xs'
                     >

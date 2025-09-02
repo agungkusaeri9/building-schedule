@@ -370,25 +370,25 @@ const AppSidebar: React.FC = () => {
             <div className="flex flex-col align-center items-center" >
               <Image
                 className="dark:hidden"
-                src="/images/logo/cmwi-logo.png"
+                src="/images/logo-toho-real.png"
                 alt="Logo"
                 width={150}
                 height={40}
               />
               <Image
                 className="hidden dark:block"
-                src="/images/logo/cmwi-logo.png"
+                src="/images/logo-toho-real.png"
                 alt="Logo"
                 width={150}
                 height={40}
               />
               <h2 className="text-gray-700 uppercase font-semibold text-sm ml-2">
-                Stock Control System
+                Building Schedule System
               </h2>
             </div>
           ) : (
             <Image
-              src="/images/logo/cmwi-logo.png"
+              src="/images/logo-toho-real.png"
               alt="Logo"
               width={32}
               height={32}
