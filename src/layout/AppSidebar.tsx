@@ -9,6 +9,7 @@ import {
   DatabaseIcon,
   GridIcon,
   HorizontaLDots,
+  PurchaseRequestIcon,
 } from "../icons/index";
 import { getCookie } from "cookies-next";
 type NavItem = {
@@ -38,7 +39,6 @@ const othersItems: NavItem[] = [
   //   ],
   // }
 ];
-// const role = typeof window !== "undefined" ? localStorage.getItem("role") : "guest";
 
 const AppSidebar: React.FC = () => {
   const { isExpanded, isMobileOpen, isHovered, setIsHovered } = useSidebar();
@@ -68,35 +68,17 @@ const AppSidebar: React.FC = () => {
       icon: <GridIcon />,
       name: "Dashboard",
       path: "/dashboard",
-      requiresAuth: false
+      requiresAuth: false,
+      roles: ["ppc", "p3", "admin"],
     },
-    // {
-    //   icon: <BalanceIcon />,
-    //   name: "Balance",
-    //   path: "/balance",
-    //   requiresAuth: false
-    // },
-    // {
-    //   icon: <PurchaseOrderIcon />,
-    //   name: "Purchase Order",
-    //   path: "/purchase-orders",
-    //   requiresAuth: false
-    // },
-    // {
-    //   icon: <PurchaseRequestIcon />,
-    //   name: "Purchase Request",
-    //   path: "/purchase-requests",
-    //   requiresAuth: false
-    // },
-    // {
-    //   icon: <HistoryIcon />,
-    //   name: "Stock",
-    //   subItems: [
-    //     { name: "In", path: "/stock-ins", pro: false },
-    //     { name: "Out", path: "/stock-outs", pro: false }
-    //   ],
-    //   requiresAuth: false
-    // },
+
+    {
+      icon: <PurchaseRequestIcon />,
+      name: "Request Schedule",
+      path: "/request-schedules",
+      requiresAuth: false,
+      roles: ["ppc", "admin"],
+    },
     {
       icon: <DatabaseIcon />,
       name: "Master Data",
@@ -106,31 +88,23 @@ const AppSidebar: React.FC = () => {
         { name: "Shift", path: "/shift", pro: false },
         { name: "Material", path: "/materials", pro: false },
         { name: "Product", path: "/products", pro: false },
-        // { name: "Area", path: "/areas", pro: false },
-        // { name: "Machine", path: "/machines", pro: false },
-        // { name: "Rack", path: "/racks", pro: false },
-        // {
-        //   name: "Kanban",
-        //   path: "/kanbans",
-        //   pro: false,
-        //   count: uncompletedKanbansCount
-        // },
-        // { name: "Makers", path: "/makers", pro: false },
-        // { name: "Suppliers", path: "/suppliers", pro: false },
       ],
-      requiresAuth: true
+      requiresAuth: true,
+      roles: ["admin"],
     },
-    // {
-    //   icon: <ReminderIcon />,
-    //   name: "Reminder",
-    //   path: "/reminder",
-    //   count: remindersCount,
-    //   requiresAuth: false
-    // },
   ];
-
+  const [role, setRole] = useState<string | null>(null);
   useEffect(() => {
     const token = getCookie('token');
+    const userCookie = getCookie("user");
+    if (userCookie) {
+      try {
+        const user = JSON.parse(userCookie as string);
+        setRole(user.role);
+      } catch (error) {
+        console.error("Failed to parse user cookie:", error);
+      }
+    }
     setIsAuthenticated(!!token);
   }, [navItems]);
 
@@ -144,6 +118,11 @@ const AppSidebar: React.FC = () => {
         if (nav.requiresAuth && !isAuthenticated) {
           return null;
         }
+
+        if (nav.roles && role && !nav.roles.includes(role)) {
+          return null;
+        }
+
 
         return (
           <li key={nav.name}>
@@ -382,8 +361,8 @@ const AppSidebar: React.FC = () => {
                 width={150}
                 height={40}
               />
-              <h2 className="text-gray-700 uppercase font-semibold text-sm ml-2">
-                Building Schedule System
+              <h2 className="text-gray-700 uppercase font-semibold text-sm ml-2 mt-2">
+                Production Schedule System
               </h2>
             </div>
           ) : (

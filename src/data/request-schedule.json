@@ -1,0 +1,132 @@
+[
+  {
+    "id": 9,
+    "code": "RS-010",
+    "products": [
+      { "name": "Hydraulic Hose Assembly", "code": "PRD019", "description": "High pressure hydraulic hose with fittings", "quantity": 22 },
+      { "name": "Brass Fitting", "code": "PRD020", "description": "½ inch BSP brass pipe fitting", "quantity": 100 }
+    ],
+    "createdAt": "2025-09-03T10:15:00Z",
+    "createdBy": "Joko",
+    "status": "pending",
+    "startDate": "2025-09-03",
+    "endDate": "2025-09-12"
+  },
+  {
+    "id": 8,
+    "code": "RS-009",
+    "products": [
+      { "name": "Aircraft Landing Gear Tire", "code": "PRD017", "description": "High durability tire for aircraft landing gear", "quantity": 12 },
+      { "name": "Titanium Screw", "code": "PRD018", "description": "M6 x 20mm Grade 5 titanium screw", "quantity": 150 }
+    ],
+    "createdAt": "2025-09-02T09:00:00Z",
+    "createdBy": "Indra",
+    "status": "completed",
+    "startDate": "2025-09-02",
+    "endDate": "2025-09-11"
+  },
+  {
+    "id": 7,
+    "code": "RS-008",
+    "products": [
+      { "name": "Industrial Conveyor Belt", "code": "PRD015", "description": "Rubber-based conveyor belt with steel reinforcement", "quantity": 18 },
+      { "name": "Steel Plate Thick", "code": "PRD016", "description": "20mm thick steel plate ASTM A36", "quantity": 70 }
+    ],
+    "createdAt": "2025-09-01T15:45:00Z",
+    "createdBy": "Hana",
+    "status": "completed",
+    "startDate": "2025-09-01",
+    "endDate": "2025-09-10"
+  },
+  {
+    "id": 7,
+    "code": "RS-007",
+    "products": [
+      { "name": "Bicycle Racing Tire", "code": "PRD013", "description": "Lightweight tire for racing bicycles", "quantity": 60 },
+      { "name": "Carbon Fiber Rod", "code": "PRD014", "description": "Ø12mm solid carbon fiber rod", "quantity": 25 }
+    ],
+    "createdAt": "2025-08-31T12:30:00Z",
+    "createdBy": "Gilang",
+    "status": "completed",
+    "startDate": "2025-08-31",
+    "endDate": "2025-09-09"
+  },
+  {
+    "id": 6,
+    "code": "RS-006",
+    "products": [
+      { "name": "Luxury Sedan Comfort Tire", "code": "PRD011", "description": "Premium comfort tire for luxury sedans", "quantity": 15 },
+      { "name": "Glass Panel Clear", "code": "PRD012", "description": "8mm clear tempered glass panel", "quantity": 10 }
+    ],
+    "createdAt": "2025-08-30T10:00:00Z",
+    "createdBy": "Farah",
+    "status": "completed",
+    "startDate": "2025-08-30",
+    "endDate": "2025-09-08"
+  },
+  {
+    "id": 5,
+    "code": "RS-005",
+    "products": [
+      { "name": "EV Low-Resistance Tire", "code": "PRD009", "description": "Energy efficient tire for electric cars", "quantity": 35 },
+      { "name": "Copper Wire Stranded", "code": "PRD010", "description": "Electrical grade copper wire 4mm²", "quantity": 200 }
+    ],
+    "createdAt": "2025-08-29T16:20:00Z",
+    "createdBy": "Eko",
+    "status": "completed",
+    "startDate": "2025-08-29",
+    "endDate": "2025-09-07"
+  },
+  {
+    "id": 4,
+    "code": "RS-004",
+    "products": [
+      { "name": "SUV All-Terrain Tire", "code": "PRD007", "description": "Off-road tire for SUVs", "quantity": 25 },
+      { "name": "Aluminium Alloy Sheet", "code": "PRD008", "description": "Lightweight aluminium sheet 6061-T6", "quantity": 45 }
+    ],
+    "createdAt": "2025-08-28T08:45:00Z",
+    "createdBy": "Dewi",
+    "status": "completed",
+    "startDate": "2025-08-28",
+    "endDate": "2025-09-06"
+  },
+  {
+    "id": 3,
+    "code": "RS-003",
+    "products": [
+      { "name": "Truck Heavy Duty Tire", "code": "PRD005", "description": "Durable long-haul truck tire", "quantity": 30 },
+      { "name": "Steel Plate A36", "code": "PRD006", "description": "Mild steel plate ASTM A36", "quantity": 100 }
+    ],
+    "createdAt": "2025-08-27T14:00:00Z",
+    "createdBy": "Citra",
+    "status": "completed",
+    "startDate": "2025-08-27",
+    "endDate": "2025-09-05"
+  },
+  {
+    "id": 2,
+    "code": "RS-002",
+    "products": [
+      { "name": "Motorcycle Sport Tire", "code": "PRD003", "description": "High grip tire for sport motorcycles", "quantity": 40 },
+      { "name": "Carbon Fiber Panel", "code": "PRD004", "description": "Lightweight carbon fiber reinforced panel", "quantity": 15 }
+    ],
+    "createdAt": "2025-08-26T11:15:00Z",
+    "createdBy": "Budi",
+    "status": "completed",
+    "startDate": "2025-08-26",
+    "endDate": "2025-09-04"
+  },
+  {
+    "id": 1,
+    "code": "RS-001",
+    "products": [
+      { "name": "Ban Mobil EcoDrive", "code": "PRD001", "description": "Eco-friendly passenger car tire", "quantity": 50 },
+      { "name": "Brake Pad Sport", "code": "PRD002", "description": "High performance brake pad for sports cars", "quantity": 20 }
+    ],
+    "createdAt": "2025-08-25T09:30:00Z",
+    "createdBy": "Agus",
+    "status": "completed",
+    "startDate": "2025-08-25",
+    "endDate": "2025-09-03"
+  }
+]

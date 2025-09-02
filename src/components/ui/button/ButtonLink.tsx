@@ -7,6 +7,7 @@ interface ButtonProps {
     variant?: "primary" | "outline" | "info" | "danger" | "warning" | "secondary";
     className?: string; // Disabled state
     href: string; // Link URL
+    disabled?: boolean;
 }
 
 const ButtonLink: React.FC<ButtonProps> = ({
@@ -15,6 +16,7 @@ const ButtonLink: React.FC<ButtonProps> = ({
     variant = "primary",
     className = "",
     href = "#",
+    disabled = false,
 }) => {
     // Size Classes
     const sizeClasses = {
@@ -42,8 +44,8 @@ const ButtonLink: React.FC<ButtonProps> = ({
 
     return (
         <Link
-            href={href}
-            className={`inline-flex items-center justify-center font-medium gap-2 rounded-lg transition ${className} ${sizeClasses[size]
+            href={disabled ? "#" : href}
+            className={`inline-flex items-center justify-center font-medium gap-2 rounded-lg transition ${disabled ? "cursor-not-allowed opacity-50" : ""} ${className} ${sizeClasses[size]
                 } ${variantClasses[variant]}
                 }`}
         >
