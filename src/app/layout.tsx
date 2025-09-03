@@ -5,6 +5,7 @@ import { SidebarProvider } from "@/context/SidebarContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { Toaster } from 'react-hot-toast';
 import ReactQueryProvider from "./providers";
+import { UserProvider } from "@/context/UserContext";
 
 const outfit = Outfit({
   variable: "--font-outfit-sans",
@@ -23,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <title>CMWI Dashboard</title>
+        <title>Production Schedule System</title>
       </head>
       <body suppressHydrationWarning className={`${outfit.variable} dark:bg-gray-900`}>
         {/* <WebSocketNotification /> */}
@@ -45,15 +46,18 @@ export default function RootLayout({
           easing="ease"
           speed={200}
         />
+
         <ThemeProvider>
-          <SidebarProvider>
-            <ReactQueryProvider>
-              <Suspense fallback={<Loading />}>
-                {children}
-              </Suspense>
-              {/* <ReminderModal /> */}
-            </ReactQueryProvider>
-          </SidebarProvider>
+          <UserProvider>
+            <SidebarProvider>
+              <ReactQueryProvider>
+                <Suspense fallback={<Loading />}>
+                  {children}
+                </Suspense>
+                {/* <ReminderModal /> */}
+              </ReactQueryProvider>
+            </SidebarProvider>
+          </UserProvider>
         </ThemeProvider>
       </body>
     </html>

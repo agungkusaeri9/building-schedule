@@ -2,25 +2,13 @@
 import React, { Suspense } from "react";
 import ButtonLink from "@/components/ui/button/ButtonLink";
 import Breadcrumb from "@/components/common/Breadcrumb";
-import { confirmDelete } from "@/utils/confirm";
-import Button from "@/components/ui/button/Button";
 import DataTable from "@/components/common/DataTable";
 import Loading from "@/components/common/Loading";
 import requestSchedules from '@/data/request-schedule.json';
-import toast from "react-hot-toast";
 import { dateFormat } from "@/utils/dateFormat";
-import { useUser } from '@/context/UserContext';
 
 
 function OperatorListContent() {
-    const { user } = useUser();
-    const handleDelete = async () => {
-        const confirmed = await confirmDelete();
-        if (confirmed) {
-            // remove(id);
-            toast.success("Request schedule deleted successfully.");
-        }
-    };
 
     const columns = [
         {
@@ -84,28 +72,21 @@ function OperatorListContent() {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             cell: (item: any) => (
                 <div className="flex items-center gap-2">
-                    {user?.role === "ppc" || user?.role === "admin" && (
-                        <>
-                            <ButtonLink
-                                href={`/request-schedules/${item.id}/edit`}
-                                variant='info'
-                                size='xs'
-                                disabled={item.status === "pending" ? false : true}
-                            >
-                                Edit
-                            </ButtonLink>
-                            <Button
-                                onClick={() => handleDelete()}
-                                variant='danger'
-                                size='xs'
-                                disabled={item.status === "pending" ? false : true}
-                            >
-                                Delete
-                            </Button>
-                        </>
-
-                    )}
-
+                    <ButtonLink
+                        href={`/schedules/${item.id}`}
+                        variant='warning'
+                        size='xs'
+                    >
+                        Detail
+                    </ButtonLink>
+                    <ButtonLink
+                        href={`/schedules/${item.id}/process`}
+                        variant='info'
+                        size='xs'
+                        disabled={item.status === "pending" ? false : true}
+                    >
+                        Process
+                    </ButtonLink>
                 </div >
             ),
         },
@@ -113,13 +94,11 @@ function OperatorListContent() {
 
     return (
         <div>
-            <Breadcrumb items={[{ label: 'Dashboard', href: '/dashboard' }, { label: 'Request Schedules', href: '/request-schedules' }]} />
+            <Breadcrumb items={[{ label: 'Dashboard', href: '/dashboard' }, { label: 'Schedules', href: '/schedules' }]} />
             <div className="space-y-6">
-                <div className="flex justify-end mb-4">
-                    <ButtonLink size='xs' href="/request-schedules/create">Add Request Schedule</ButtonLink>
-                </div>
+
                 <DataTable
-                    title="Request Schedule List"
+                    title="Schedule List"
                     columns={columns}
                     data={requestSchedules || []}
                     isLoading={false}
@@ -134,7 +113,7 @@ function OperatorListContent() {
                     search={{
                         value: "",
                         onChange: () => { },
-                        placeholder: "Search request schedule...",
+                        placeholder: "Search schedule...",
                     }}
                 />
             </div>

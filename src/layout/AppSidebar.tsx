@@ -80,6 +80,13 @@ const AppSidebar: React.FC = () => {
       roles: ["ppc", "admin"],
     },
     {
+      icon: <PurchaseRequestIcon />,
+      name: "Schedule",
+      path: "/schedules",
+      requiresAuth: false,
+      roles: ["p3", "admin"],
+    },
+    {
       icon: <DatabaseIcon />,
       name: "Master Data",
       subItems: [

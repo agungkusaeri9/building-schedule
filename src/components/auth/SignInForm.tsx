@@ -3,7 +3,6 @@ import Checkbox from "@/components/form/input/Checkbox";
 import Button from "@/components/ui/button/Button";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
-import { setCookie } from 'cookies-next/client';
 import toast from "react-hot-toast";
 import { useMutation } from "@tanstack/react-query";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -14,6 +13,7 @@ import { z } from "zod";
 import Loading from "../common/Loading";
 import showToast from "@/utils/showToast";
 import { AxiosError } from "axios";
+import { useUser } from "@/context/UserContext";
 
 type LoginFormData = z.infer<typeof loginValidation>;
 
@@ -22,6 +22,8 @@ export default function SignInForm() {
   const searchParams = useSearchParams();
   const [isChecked, setIsChecked] = useState(false);
   const callbackUrl = searchParams.get("callbackUrl") || "/dashboard";
+  const { login } = useUser();
+
 
   const { mutate: loginMutation, isPending: loading, isSuccess } = useMutation({
     mutationFn: async (data: LoginFormData) => {
@@ -80,21 +82,9 @@ export default function SignInForm() {
     },
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onSuccess: (response: any) => {
-      // console.log({ response });
-      // Set user data cookie
-      setCookie('user', response.data.data, {
-        path: '/',
-        secure: false,
-        sameSite: 'lax',
-      });
-
-      // Set auth token cookie
-      setCookie('token', response.data.data.token, {
-        path: '/',
-        secure: false,
-        sameSite: 'lax',
-      });
-
+      const userData = response.data.data;
+      const userToken = response.data.data.token;
+      login(userData, userToken);
       toast.success(response.data.message);
       router.push(callbackUrl);
     },
