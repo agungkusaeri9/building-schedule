@@ -1,0 +1,113 @@
+[
+   {
+  "id": 10,
+  "request_scheduling_code": "RS-010",
+  "products": [
+    {
+      "id": 19,
+      "name": "Hydraulic Hose Assembly",
+      "code": "PRD019",
+      "description": "High pressure hydraulic hose with fittings",
+      "quantity": 22
+    },
+    {
+      "id": 20,
+      "name": "Brass Fitting",
+      "code": "PRD020",
+      "description": "½ inch BSP brass pipe fitting",
+      "quantity": 100,
+      "priority": ""
+    }
+  ],
+  "machines": [
+    {
+      "machine_id": 1,
+      "machine_name": "Machine A",
+      "materials": [
+        {
+          "id": 7,
+          "name": "Rubber Seal",
+          "code": "RB44Q",
+          "description": "Industrial rubber gasket",
+          "quantity": 100,
+          "priority": ""
+        },
+        {
+          "id": 1,
+          "name": "Bolt Hex",
+          "code": "XJ92A",
+          "description": "High strength hexagonal bolt",
+          "quantity": 100,
+          "priority": ""
+        }
+      ]
+    },
+    {
+      "machine_id": 2,
+      "machine_name": "Machine B",
+      "materials": [
+        {
+          "id": 10,
+          "name": "Brass Fitting",
+          "code": "BRF63",
+          "description": "Brass pipe fitting",
+          "quantity": 100,
+          "priority": ""
+        },
+        {
+          "id": 5,
+          "name": "Aluminium Sheet",
+          "code": "ALX52",
+          "description": "Lightweight aluminium sheet",
+          "quantity": 50,
+          "priority": ""
+        },
+        {
+          "id": 2,
+          "name": "Steel Plate",
+          "code": "PLT77",
+          "description": "Mild steel plate",
+          "quantity": 70,
+          "priority": ""
+        }
+      ]
+    },
+    {
+      "machine_id": 3,
+      "machine_name": "Machine C",
+      "materials": [
+        {
+          "id": 8,
+          "name": "Carbon Fiber Rod",
+          "code": "CFD19",
+          "description": "High strength carbon fiber rod",
+          "quantity": 30,
+          "priority": ""
+        },
+        {
+          "id": 9,
+          "name": "Titanium Screw",
+          "code": "TI07L",
+          "description": "Corrosion-resistant screw",
+          "quantity": 60,
+          "priority": ""
+        },
+        {
+          "id": 3,
+          "name": "Copper Wire",
+          "code": "CWX15",
+          "description": "Electrical grade copper wire",
+          "quantity": 40,
+          "priority": ""
+        }
+      ]
+    }
+  ],
+  "createdAt": "2025-09-03T10:15:00Z",
+  "createdBy": "Joko",
+  "status": "pending",
+  "startDate": "2025-09-03",
+  "endDate": "2025-09-12"
+}
+
+]

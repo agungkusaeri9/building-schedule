@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "schedule_id": 1,
+        "machine": {
+            "id": 1,
+            "code": "Machine A"
+        },
+        "schedules":[
+            {
+                "mc": "MC-001",
+                "rm": "RM-01",
+                "code": "A123",
+                "shift": "M1 / Shift 1",
+                "stock": 120,
+                "curv": "95%",
+                "bo": 0,
+                "sch": "2025-09-05",
+                "start": "03:30",
+                "finish": "06:15",
+                "loading": "07:00",
+                "shortage": "-",
+                "jeda": "30m",
+                "remark": "OK"
+            },
+            {
+                "mc": "MC-002",
+                "rm": "RM-02",
+                "code": "B456",
+                "shift": "M2 / Shift 2",
+                "stock": 80,
+                "curv": "88%",
+                "bo": 2,
+                "sch": "2025-09-05",
+                "start": "04:23",
+                "finish": "09:10",
+                "loading": "09:30",
+                "shortage": "10",
+                "jeda": "15m",
+                "remark": "Delay BO"
+            },
+            {
+                "mc": "MC-003",
+                "rm": "RM-03",
+                "code": "C789",
+                "shift": "M1 / Shift 3",
+                "stock": 200,
+                "curv": "100%",
+                "bo": 0,
+                "sch": "2025-09-06",
+                "start": "07:45",
+                "finish": "10:30",
+                "loading": "11:00",
+                "shortage": "-",
+                "jeda": "20m",
+                "remark": "OK"
+            },
+            {
+                "mc": "MC-004",
+                "rm": "RM-04",
+                "code": "D012",
+                "shift": "M3 / Shift 1",
+                "stock": 60,
+                "curv": "75%",
+                "bo": 5,
+                "sch": "2025-09-06",
+                "start": "11:00",
+                "finish": "15:20",
+                "loading": "16:00",
+                "shortage": "3",
+                "jeda": "45m",
+                "remark": "Need Check"
+            },
+            {
+                "mc": "MC-005",
+                "rm": "RM-05",
+                "code": "E345",
+                "shift": "M2 / Shift 2",
+                "stock": 150,
+                "curv": "92%",
+                "bo": 1,
+                "sch": "2025-09-07",
+                "start": "20:10",
+                "finish": "23:50",
+                "loading": "00:15",
+                "shortage": "2",
+                "jeda": "25m",
+                "remark": "On Track"
+            }
+            ]
+    },
+    {
+        "id": 2,
+        "schedule_id": 1,
+        "machine": {
+            "id": 2,
+            "code": "Machine B"
+        },
+        "schedules":[
+            {
+                "mc": "MC-001",
+                "rm": "RM-01",
+                "code": "A123",
+                "shift": "M1 / Shift 1",
+                "stock": 120,
+                "curv": "95%",
+                "bo": 0,
+                "sch": "2025-09-05",
+                "start": "03:30",
+                "finish": "06:15",
+                "loading": "07:00",
+                "shortage": "-",
+                "jeda": "30m",
+                "remark": "OK"
+            },
+            {
+                "mc": "MC-002",
+                "rm": "RM-02",
+                "code": "B456",
+                "shift": "M2 / Shift 2",
+                "stock": 80,
+                "curv": "88%",
+                "bo": 2,
+                "sch": "2025-09-05",
+                "start": "04:23",
+                "finish": "09:10",
+                "loading": "09:30",
+                "shortage": "10",
+                "jeda": "15m",
+                "remark": "Delay BO"
+            },
+            {
+                "mc": "MC-003",
+                "rm": "RM-03",
+                "code": "C789",
+                "shift": "M1 / Shift 3",
+                "stock": 200,
+                "curv": "100%",
+                "bo": 0,
+                "sch": "2025-09-06",
+                "start": "07:45",
+                "finish": "10:30",
+                "loading": "11:00",
+                "shortage": "-",
+                "jeda": "20m",
+                "remark": "OK"
+            },
+            {
+                "mc": "MC-004",
+                "rm": "RM-04",
+                "code": "D012",
+                "shift": "M3 / Shift 1",
+                "stock": 60,
+                "curv": "75%",
+                "bo": 5,
+                "sch": "2025-09-06",
+                "start": "11:00",
+                "finish": "15:20",
+                "loading": "16:00",
+                "shortage": "3",
+                "jeda": "45m",
+                "remark": "Need Check"
+            },
+            {
+                "mc": "MC-005",
+                "rm": "RM-05",
+                "code": "E345",
+                "shift": "M2 / Shift 2",
+                "stock": 150,
+                "curv": "92%",
+                "bo": 1,
+                "sch": "2025-09-07",
+                "start": "20:10",
+                "finish": "23:50",
+                "loading": "00:15",
+                "shortage": "2",
+                "jeda": "25m",
+                "remark": "On Track"
+            }
+            ]
+    }
+]

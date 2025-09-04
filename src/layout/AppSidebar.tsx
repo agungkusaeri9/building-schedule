@@ -87,6 +87,13 @@ const AppSidebar: React.FC = () => {
       roles: ["p3", "admin"],
     },
     {
+      icon: <PurchaseRequestIcon />,
+      name: "Timeline Schedule",
+      path: "/timeline-schedules",
+      requiresAuth: false,
+      roles: ["p3", "admin"],
+    },
+    {
       icon: <DatabaseIcon />,
       name: "Master Data",
       subItems: [

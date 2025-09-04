@@ -1,0 +1,37 @@
+[
+    {
+        "id": 10,
+        "code": "ST-010",
+        "request_scheduling_code": "RS-010",
+        "date": "2025-09-04",
+        "createdAt": "2025-09-03T10:15:00Z",
+        "materials": [
+                {
+                    "id": 8,
+                    "name": "Carbon Fiber Rod",
+                    "code": "CFD19",
+                    "description": "High strength carbon fiber rod",
+                    "quantity": 30,
+                    "priority": "A"
+                },
+                {
+                    "id": 9,
+                    "name": "Titanium Screw",
+                    "code": "TI07L",
+                    "description": "Corrosion-resistant screw",
+                    "quantity": 60,
+                    "priority": "B"
+                },
+                {
+                    "id": 3,
+                    "name": "Copper Wire",
+                    "code": "CWX15",
+                    "description": "Electrical grade copper wire",
+                    "quantity": 40,
+                    "priority": "C"
+                }
+            ],
+        "createdBy": "Joko"
+    }
+
+]
