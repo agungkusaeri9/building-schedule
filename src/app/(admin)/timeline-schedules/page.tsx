@@ -6,6 +6,8 @@ import DataTable from "@/components/common/DataTable";
 import Loading from "@/components/common/Loading";
 import scheduleTimelines from '@/data/schedule-timeline.json';
 import { dateFormat } from "@/utils/dateFormat";
+import ButtonExportDropdown from "@/components/buttonExportDropdown";
+import { Info } from "lucide-react";
 
 
 function OperatorListContent() {
@@ -19,26 +21,6 @@ function OperatorListContent() {
         {
             header: "Code",
             accessorKey: "code",
-        },
-        {
-            header: "Material",
-            accessorKey: "materials",
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            cell: (item: any) => (
-                <>
-                    <ul>
-                        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                        {item.materials.map((material: any) => (
-                            <li className="text-sm text-white text-left bg-gray-800 px-2 mb-1 rounded flex justify-between" key={material.id}>
-                                <span className="w-2/4">
-                                    {material.name}
-                                </span>
-                                {/* <span className="w-1/4">Qty : {product.quantity}</span> */}
-                            </li>
-                        ))}
-                    </ul>
-                </>
-            )
         },
         {
             header: "Created At",
@@ -55,12 +37,16 @@ function OperatorListContent() {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             cell: (item: any) => (
                 <div className="flex items-center gap-2">
+                    <ButtonExportDropdown />
+
+                    {/* Detail */}
                     <ButtonLink
                         href={`/timeline-schedules/${item.id}`}
-                        variant='warning'
-                        size='xs'
+                        variant="warning"
+                        size="xs"
+                    // title="Detail"
                     >
-                        Detail
+                        <Info className="w-4 h-4" /> Detail
                     </ButtonLink>
                 </div >
             ),

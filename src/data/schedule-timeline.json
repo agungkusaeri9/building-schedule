@@ -1,37 +1,206 @@
 [
-    {
+  {
+    "id": 1,
+    "code": "ST-001",
+    "request_scheduling_code": "RS-001",
+    "date": "2025-09-01",
+    "createdAt": "2025-08-31T09:00:00Z",
+    "materials": [
+      {
+        "id": 1,
+        "name": "Aluminum Sheet",
+        "code": "ALU01",
+        "description": "Lightweight aluminum sheet",
+        "quantity": 50,
+        "priority": "A"
+      },
+      {
+        "id": 2,
+        "name": "Steel Bolt",
+        "code": "STB11",
+        "description": "High tensile strength bolt",
+        "quantity": 100,
+        "priority": "B"
+      }
+    ],
+    "createdBy": "Agus"
+  },
+  {
+    "id": 2,
+    "code": "ST-002",
+    "request_scheduling_code": "RS-002",
+    "date": "2025-09-02",
+    "createdAt": "2025-09-01T11:20:00Z",
+    "materials": [
+      {
+        "id": 3,
+        "name": "Copper Wire",
+        "code": "CWX15",
+        "description": "Electrical grade copper wire",
+        "quantity": 40,
+        "priority": "C"
+      },
+      {
+        "id": 4,
+        "name": "Rubber Seal",
+        "code": "RB09",
+        "description": "Industrial grade rubber seal",
+        "quantity": 25,
+        "priority": "B"
+      }
+    ],
+    "createdBy": "Sari"
+  },
+  {
+    "id": 3,
+    "code": "ST-003",
+    "request_scheduling_code": "RS-003",
+    "date": "2025-09-03",
+    "createdAt": "2025-09-02T08:30:00Z",
+    "materials": [
+      {
+        "id": 5,
+        "name": "Plastic Pellet",
+        "code": "PLT21",
+        "description": "High density plastic pellets",
+        "quantity": 200,
+        "priority": "B"
+      }
+    ],
+    "createdBy": "Budi"
+  },
+  {
+    "id": 4,
+    "code": "ST-004",
+    "request_scheduling_code": "RS-004",
+    "date": "2025-09-04",
+    "createdAt": "2025-09-03T10:15:00Z",
+    "materials": [
+      {
+        "id": 6,
+        "name": "Carbon Fiber Rod",
+        "code": "CFD19",
+        "description": "High strength carbon fiber rod",
+        "quantity": 30,
+        "priority": "A"
+      },
+      {
+        "id": 7,
+        "name": "Titanium Screw",
+        "code": "TI07L",
+        "description": "Corrosion-resistant screw",
+        "quantity": 60,
+        "priority": "B"
+      }
+    ],
+    "createdBy": "Joko"
+  },
+  {
+    "id": 5,
+    "code": "ST-005",
+    "request_scheduling_code": "RS-005",
+    "date": "2025-09-05",
+    "createdAt": "2025-09-04T12:10:00Z",
+    "materials": [
+      {
+        "id": 8,
+        "name": "Silicon Chip",
+        "code": "SC45",
+        "description": "Microprocessor silicon chip",
+        "quantity": 10,
+        "priority": "A"
+      }
+    ],
+    "createdBy": "Dewi"
+  },
+  {
+    "id": 6,
+    "code": "ST-006",
+    "request_scheduling_code": "RS-006",
+    "date": "2025-09-06",
+    "createdAt": "2025-09-05T07:50:00Z",
+    "materials": [
+      {
+        "id": 9,
+        "name": "Iron Rod",
+        "code": "IR22",
+        "description": "Industrial construction iron rod",
+        "quantity": 75,
+        "priority": "B"
+      }
+    ],
+    "createdBy": "Made"
+  },
+  {
+    "id": 7,
+    "code": "ST-007",
+    "request_scheduling_code": "RS-007",
+    "date": "2025-09-07",
+    "createdAt": "2025-09-06T14:05:00Z",
+    "materials": [
+      {
         "id": 10,
-        "code": "ST-010",
-        "request_scheduling_code": "RS-010",
-        "date": "2025-09-04",
-        "createdAt": "2025-09-03T10:15:00Z",
-        "materials": [
-                {
-                    "id": 8,
-                    "name": "Carbon Fiber Rod",
-                    "code": "CFD19",
-                    "description": "High strength carbon fiber rod",
-                    "quantity": 30,
-                    "priority": "A"
-                },
-                {
-                    "id": 9,
-                    "name": "Titanium Screw",
-                    "code": "TI07L",
-                    "description": "Corrosion-resistant screw",
-                    "quantity": 60,
-                    "priority": "B"
-                },
-                {
-                    "id": 3,
-                    "name": "Copper Wire",
-                    "code": "CWX15",
-                    "description": "Electrical grade copper wire",
-                    "quantity": 40,
-                    "priority": "C"
-                }
-            ],
-        "createdBy": "Joko"
-    }
-
+        "name": "Glass Sheet",
+        "code": "GLS12",
+        "description": "Tempered glass sheet",
+        "quantity": 15,
+        "priority": "C"
+      }
+    ],
+    "createdBy": "Tono"
+  },
+  {
+    "id": 8,
+    "code": "ST-008",
+    "request_scheduling_code": "RS-008",
+    "date": "2025-09-08",
+    "createdAt": "2025-09-07T09:25:00Z",
+    "materials": [
+      {
+        "id": 11,
+        "name": "Brass Nut",
+        "code": "BN32",
+        "description": "Durable brass nut",
+        "quantity": 120,
+        "priority": "B"
+      }
+    ],
+    "createdBy": "Rina"
+  },
+  {
+    "id": 9,
+    "code": "ST-009",
+    "request_scheduling_code": "RS-009",
+    "date": "2025-09-09",
+    "createdAt": "2025-09-08T13:40:00Z",
+    "materials": [
+      {
+        "id": 12,
+        "name": "PVC Pipe",
+        "code": "PVC88",
+        "description": "High pressure PVC pipe",
+        "quantity": 90,
+        "priority": "B"
+      }
+    ],
+    "createdBy": "Andi"
+  },
+  {
+    "id": 10,
+    "code": "ST-010",
+    "request_scheduling_code": "RS-010",
+    "date": "2025-09-10",
+    "createdAt": "2025-09-09T11:55:00Z",
+    "materials": [
+      {
+        "id": 13,
+        "name": "Zinc Plate",
+        "code": "ZP44",
+        "description": "Corrosion-resistant zinc plate",
+        "quantity": 35,
+        "priority": "A"
+      }
+    ],
+    "createdBy": "Sinta"
+  }
 ]

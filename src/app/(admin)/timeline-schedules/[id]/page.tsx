@@ -5,6 +5,7 @@ import moment from "moment";
 import "react-calendar-timeline/dist/style.css";
 
 import scheduleData from "@/data/schedule-timeline-detail.json";
+import Breadcrumb from "@/components/common/Breadcrumb";
 
 // Child component buat satu blok Machine
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -33,86 +34,116 @@ function MachineBlock({ machineBlock }: { machineBlock: any }) {
     }, []);
 
     return (
-        <div className="flex border border-gray-300 shadow-sm">
-            {/* kolom kiri (tabel) */}
-            <div className="w-1/2 border-r border-gray-300 overflow-x-auto">
-                <table className="w-full border border-gray-300 text-sm whitespace-nowrap">
-                    <thead>
-                        <tr className="bg-gray-100">
-                            <th className="border px-2 py-1 h-[62px]">MC</th>
-                            <th className="border px-2 py-1 h-[62px]">RM</th>
-                            <th className="border px-2 py-1 h-[62px]">Code</th>
-                            <th className="border px-2 py-1 h-[62px]">Mould/Shift</th>
-                            <th className="border px-2 py-1 h-[62px]">Stock RC</th>
-                            <th className="border px-2 py-1 h-[62px]">Curv. Est.</th>
-                            <th className="border px-2 py-1 h-[62px]">BO</th>
-                            <th className="border px-2 py-1 h-[62px]">Building SCH</th>
-                            <th className="border px-2 py-1 h-[62px]">Start</th>
-                            <th className="border px-2 py-1 h-[62px]">Finish</th>
-                            <th className="border px-2 py-1 h-[62px]">Loading</th>
-                            <th className="border px-2 py-1 h-[62px]">Shortage</th>
-                            <th className="border px-2 py-1 h-[62px]">Jeda</th>
-                            <th className="border px-2 py-1 h-[62px]">Remark</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                        {machineBlock.schedules.map((row: any, idx: number) => (
-                            <tr key={idx} className="odd:bg-white even:bg-gray-50">
-                                {idx === 0 && (
-                                    <td
-                                        className="border px-2 py-1 h-[50px]"
-                                        rowSpan={machineBlock.schedules.length}
-                                    >
-                                        {machineBlock.machine.code}
-                                    </td>
-                                )}
-                                <td className="border px-2 py-1 h-[50px]">{row.rm}</td>
-                                <td className="border px-2 py-1 h-[50px]">{row.code}</td>
-                                <td className="border px-2 py-1 h-[50px]">{row.shift}</td>
-                                <td className="border px-2 py-1 h-[50px]">{row.stock}</td>
-                                <td className="border px-2 py-1 h-[50px]">{row.curv}</td>
-                                <td className="border px-2 py-1 h-[50px]">{row.bo}</td>
-                                <td className="border px-2 py-1 h-[50px]">{row.sch}</td>
-                                <td className="border px-2 py-1 h-[50px]">{row.start}</td>
-                                <td className="border px-2 py-1 h-[50px]">{row.finish}</td>
-                                <td className="border px-2 py-1 h-[50px]">{row.loading}</td>
-                                <td className="border px-2 py-1 h-[50px]">{row.shortage}</td>
-                                <td className="border px-2 py-1 h-[50px]">{row.jeda}</td>
-                                <td className="border px-2 py-1 h-[50px]">{row.remark}</td>
+        <>
+            <div className="flex border border-gray-300 shadow-sm">
+                {/* kolom kiri (tabel) */}
+                <div className="w-1/2 border-r border-gray-300 overflow-x-auto">
+                    <table className="w-full border border-gray-300 text-sm whitespace-nowrap">
+                        <thead>
+                            <tr className="bg-gray-100">
+                                <th className="border px-2 py-1 h-[62px]">MC</th>
+                                <th className="border px-2 py-1 h-[62px]">RM</th>
+                                <th className="border px-2 py-1 h-[62px]">Code</th>
+                                <th className="border px-2 py-1 h-[62px]">Mould/Shift</th>
+                                <th className="border px-2 py-1 h-[62px]">Stock RC</th>
+                                <th className="border px-2 py-1 h-[62px]">Curv. Est.</th>
+                                <th className="border px-2 py-1 h-[62px]">BO</th>
+                                <th className="border px-2 py-1 h-[62px]">Building SCH</th>
+                                <th className="border px-2 py-1 h-[62px]">Start</th>
+                                <th className="border px-2 py-1 h-[62px]">Finish</th>
+                                <th className="border px-2 py-1 h-[62px]">Loading</th>
+                                <th className="border px-2 py-1 h-[62px]">Shortage</th>
+                                <th className="border px-2 py-1 h-[62px]">Jeda</th>
+                                <th className="border px-2 py-1 h-[62px]">Remark</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+                        </thead>
+                        <tbody>
+                            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                            {machineBlock.schedules.map((row: any, idx: number) => (
+                                <tr key={idx} className="odd:bg-white even:bg-gray-50">
+                                    {idx === 0 && (
+                                        <td
+                                            className="border px-2 py-1 h-[50px]"
+                                            rowSpan={machineBlock.schedules.length}
+                                        >
+                                            {machineBlock.machine.code}
+                                        </td>
+                                    )}
+                                    <td className="border px-2 py-1 h-[50px]">{row.rm}</td>
+                                    <td className="border px-2 py-1 h-[50px]">{row.code}</td>
+                                    <td className="border px-2 py-1 h-[50px]">{row.shift}</td>
+                                    <td className="border px-2 py-1 h-[50px]">{row.stock}</td>
+                                    <td className="border px-2 py-1 h-[50px]">{row.curv}</td>
+                                    <td className="border px-2 py-1 h-[50px]">{row.bo}</td>
+                                    <td className="border px-2 py-1 h-[50px]">{row.sch}</td>
+                                    <td className="border px-2 py-1 h-[50px]">{row.start}</td>
+                                    <td className="border px-2 py-1 h-[50px]">{row.finish}</td>
+                                    <td className="border px-2 py-1 h-[50px]">{row.loading}</td>
+                                    <td className="border px-2 py-1 h-[50px]">{row.shortage}</td>
+                                    <td className="border px-2 py-1 h-[50px]">{row.jeda}</td>
+                                    <td className="border px-2 py-1 h-[50px]">{row.remark}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
 
-            {/* timeline kanan */}
-            <div className="w-1/2 overflow-x-auto" ref={scrollRef}>
-                <div className="min-w-[1200px]">
-                    <Timeline
-                        groups={groups}
-                        items={items}
-                        defaultTimeStart={moment().startOf("day").valueOf()}
-                        defaultTimeEnd={moment().endOf("day").valueOf()}
-                        lineHeight={50}
-                        itemHeightRatio={0.7}
-                        canMove={false}
-                        canResize={false}
-                        canChangeGroup={false}
-                    />
+                {/* timeline kanan */}
+                <div className="w-1/2 overflow-x-auto" ref={scrollRef}>
+                    <div className="min-w-[1200px]">
+                        <Timeline
+                            groups={groups}
+                            items={items}
+                            defaultTimeStart={moment().startOf("day").valueOf()}
+                            defaultTimeEnd={moment().endOf("day").valueOf()}
+                            lineHeight={50}
+                            itemHeightRatio={0.7}
+                            canMove={false}
+                            canResize={false}
+                            canChangeGroup={false}
+                            itemRenderer={({ item, itemContext, getItemProps }) => {
+                                const start = moment(item.start_time);
+                                const end = moment(item.end_time);
+                                const duration = moment.duration(end.diff(start)).asMinutes();
+
+                                return (
+                                    <div
+                                        {...getItemProps({
+                                            style: {
+                                                backgroundColor: itemContext.selected ? "#3b82f6" : "#60a5fa",
+                                                borderRadius: "4px",
+                                                color: "white",
+                                                padding: "4px",
+                                            },
+                                        })}
+                                        title={`Start: ${start.format("HH:mm")}\nEnd: ${end.format(
+                                            "HH:mm"
+                                        )}\nDuration: ${duration} menit`}
+                                    >
+                                        {item.title}
+                                    </div>
+                                );
+                            }}
+                        />
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
+
     );
 }
 
 // Parent component
 export default function CustomTimeline() {
     return (
-        <div className="space-y-8">
-            {scheduleData.map((machineBlock) => (
-                <MachineBlock key={machineBlock.id} machineBlock={machineBlock} />
-            ))}
-        </div>
+        <>
+            <Breadcrumb items={[{ label: 'Dashboard', href: '/dashboard' }, { label: 'Timeline Schedule', href: '/timeline-schedules' }, { label: 'Detail' }]} />
+            <div className="space-y-8">
+                <h1 className="text-xl font-bold">Timeline Schedule</h1>
+                {scheduleData.map((machineBlock) => (
+                    <MachineBlock key={machineBlock.id} machineBlock={machineBlock} />
+                ))}
+            </div>
+        </>
     );
 }
