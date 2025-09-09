@@ -9,11 +9,9 @@ import Loading from "@/components/common/Loading";
 import requestSchedules from '@/data/request-schedule.json';
 import toast from "react-hot-toast";
 import { dateFormat } from "@/utils/dateFormat";
-import { useUser } from '@/context/UserContext';
 
 
 function OperatorListContent() {
-    const { user } = useUser();
     const handleDelete = async () => {
         const confirmed = await confirmDelete();
         if (confirmed) {
