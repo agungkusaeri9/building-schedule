@@ -84,28 +84,22 @@ function OperatorListContent() {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             cell: (item: any) => (
                 <div className="flex items-center gap-2">
-                    {user?.role === "ppc" || user?.role === "admin" && (
-                        <>
-                            <ButtonLink
-                                href={`/request-schedules/${item.id}/edit`}
-                                variant='info'
-                                size='xs'
-                                disabled={item.status === "pending" ? false : true}
-                            >
-                                Edit
-                            </ButtonLink>
-                            <Button
-                                onClick={() => handleDelete()}
-                                variant='danger'
-                                size='xs'
-                                disabled={item.status === "pending" ? false : true}
-                            >
-                                Delete
-                            </Button>
-                        </>
-
-                    )}
-
+                    <ButtonLink
+                        href={`/request-schedules/${item.id}/edit`}
+                        variant='info'
+                        size='xs'
+                        disabled={item.status === "pending" ? false : true}
+                    >
+                        Edit
+                    </ButtonLink>
+                    <Button
+                        onClick={() => handleDelete()}
+                        variant='danger'
+                        size='xs'
+                        disabled={item.status === "pending" ? false : true}
+                    >
+                        Delete
+                    </Button>
                 </div >
             ),
         },
