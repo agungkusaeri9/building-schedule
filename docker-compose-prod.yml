@@ -1,0 +1,11 @@
+services:
+  sumirabber-scheduler-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # NEXT_PUBLIC_API_BASE_URL: "http://sumirabber-scheduler-api:5063/api"
+    container_name: sumirabber-scheduler-web
+    ports:
+      - "3002:3000"
+    restart: unless-stopped
